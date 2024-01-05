@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cve-maker"
+version = "2.5"
+authors = [
+  { name="msd0pe", email="msd0pe@protonmail.com" },
+]
+description = "Tool to find CVEs and Exploits."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+  'requests',
+  'colorama',
+  'prettytable',
+  'pwntools'
+]
+
+[project.urls]
+Homepage = "https://github.com/msd0pe-1/cve-maker"
+Issues = "https://github.com/msd0pe-1/cve-maker/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cve-maker/cve-maker.py", "src/cve-maker/headers.txt"]
